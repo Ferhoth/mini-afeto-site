@@ -64,7 +64,7 @@
         ul {
             padding-left: 20px;
         }
-        input, textarea, button {
+        input, textarea, select, button {
             display: block;
             width: 100%;
             margin-bottom: 15px;
@@ -84,6 +84,11 @@
             max-width: 100%;
             margin-top: 10px;
         }
+        .carrossel img {
+            width: 30%;
+            margin: 5px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -95,14 +100,17 @@
     <nav>
         <a href="#produtos">Produtos</a>
         <a href="#como-funciona">Como Funciona</a>
-        <a href="#upload">Envio de Fotos</a>
         <a href="#pedido">Pedido</a>
-        <a href="#depoimentos">Depoimentos</a>
         <a href="#contato">Contato</a>
     </nav>
 
     <section>
-        <img src="imagens/banner-fotos.jpg" alt="Fotos de ímãs personalizados" class="banner">
+        <img src="imagens/2.png" alt="Banner Mini Afeto" class="banner">
+
+        <div class="cta">
+            <h2>Pronto para fazer seu pedido?</h2>
+            <p><a href="#pedido">Clique aqui para comprar agora!</a></p>
+        </div>
 
         <div id="produtos" class="produto">
             <h2>Conjunto com 9 Ímãs Personalizados (5x5cm)</h2>
@@ -110,7 +118,6 @@
             <ul>
                 <li>📸 Fazemos com qualquer foto</li>
                 <li>📏 Tamanho: 5x5cm</li>
-                <li>🚚 Frete grátis a partir de R$250</li>
                 <li>⏳ Produção: 5 dias úteis + envio</li>
             </ul>
         </div>
@@ -119,24 +126,41 @@
             <h2>Como Funciona</h2>
             <ol>
                 <li>Realize seu pedido</li>
-                <li>Envie suas fotos por e-mail ou faça o upload aqui no site</li>
+                <li>Faça o upload aqui no site</li>
                 <li>Produzimos com carinho</li>
                 <li>Enviamos para todo o Brasil</li>
             </ol>
         </div>
 
-        <div id="upload" class="upload">
-            <h2>Envie Sua Foto e Corte para o Ímã</h2>
+        <div id="pedido" class="formulario">
+            <h2>Pedido</h2>
+
+            <div class="carrossel" style="text-align:center;">
+                <img src="imagens/njrdf.JPG" alt="Exemplo de Ímã">
+                <img src="imagens/ty5etyhrte.JPG" alt="Exemplo de Ímã">
+                <img src="imagens/Capturar.JPG" alt="Exemplo de Ímã">
+            </div>
+
+            <h3>Selecione a quantidade:</h3>
+            <select id="quantidade" name="quantidade" required>
+                <option value="1">1 unidade - R$ 24,99</option>
+                <option value="3">3 unidades - R$ 59,99</option>
+                <option value="9">9 unidades - R$ 124,99</option>
+            </select>
+
+            <p>Calcule o frete no checkout.</p>
+
+            <p>Produzimos com carinho seus ímãs magnéticos personalizados com suas fotos favoritas. Tamanho 5x5cm. Ideal para lembranças e presentes.</p>
+
+            <h3>Envie sua imagem e recorte:</h3>
             <input type="file" id="inputImage" accept="image/*">
             <div id="preview">
                 <img id="image" alt="Pré-visualização">
             </div>
             <button id="cropButton">Cortar Imagem</button>
             <div id="cropped-result"></div>
-        </div>
 
-        <div id="pedido" class="formulario">
-            <h2>Formulário de Pedido</h2>
+            <h3>Dados de Entrega:</h3>
             <form action="https://pagseguro.uol.com.br" method="POST">
                 <input type="text" name="nome" placeholder="Seu Nome" required>
                 <input type="email" name="email" placeholder="Seu Email" required>
@@ -145,22 +169,11 @@
                 <button type="submit">Finalizar Pedido e Pagar</button>
             </form>
         </div>
-
-        <div id="depoimentos">
-            <h2>Depoimentos de Clientes</h2>
-            <p>⭐⭐⭐⭐⭐ "Simplesmente perfeito!" - Ana P.</p>
-            <p>⭐⭐⭐⭐⭐ "Minha mãe amou o presente!" - Luiza M.</p>
-            <p>⭐⭐⭐⭐⭐ "Qualidade excelente, recomendo muito." - Gabriel R.</p>
-        </div>
-
-        <div class="cta">
-            <h2>Pronto para fazer seu pedido?</h2>
-            <p><a href="#pedido">Clique aqui para comprar agora!</a></p>
-        </div>
     </section>
 
     <footer id="contato">
-        <p>📧 Email: afetuosaarrte@gmail.com</p>
+        <p>📧 Email: ferhoth@hotmail.com</p>
+        <p>📱 Whatsapp: (11) 94634-1004</p>
         <p>© 2025 Mini Afeto Magnéticos - Todos os direitos reservados.</p>
     </footer>
 
