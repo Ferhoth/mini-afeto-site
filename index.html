@@ -45,22 +45,37 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
-        .cta {
-            background-color: #ffb6b9;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-        }
         footer {
             text-align: center;
             padding: 20px;
             background-color: #ffe0e0;
             font-size: 0.9em;
         }
+        /* Banner de entrada */
+        .banner-wrapper {
+            position: relative;
+            margin-bottom: 40px;
+        }
         img.banner {
             width: 100%;
             border-radius: 10px;
         }
+        .banner-link {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ffb6b9;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .banner-link:hover {
+            background-color: #ff9aa0;
+        }
+        /* Inputs e botões */
         ul {
             padding-left: 20px;
         }
@@ -84,10 +99,49 @@
             max-width: 100%;
             margin-top: 10px;
         }
-        .carrossel img {
-            width: 30%;
-            margin: 5px;
-            border-radius: 10px;
+        /* Carrossel de reviews */
+        .reviews-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .reviews-section h2 {
+            margin-bottom: 20px;
+        }
+        .review {
+            display: none;
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .review.active {
+            display: block;
+        }
+        .review img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        /* Botões de navegação opcional */
+        .review-nav {
+            margin-top: 10px;
+        }
+        .review-nav button {
+            background: #ffb6b9;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .review-nav button:hover {
+            background: #ff9aa0;
         }
     </style>
 </head>
@@ -105,11 +159,10 @@
     </nav>
 
     <section>
-        <img src="imagens/2.png" alt="Banner Mini Afeto" class="banner">
-
-        <div class="cta">
-            <h2>Pronto para fazer seu pedido?</h2>
-            <p><a href="#pedido">Clique aqui para comprar agora!</a></p>
+        <!-- Banner de entrada com link no canto inferior esquerdo -->
+        <div class="banner-wrapper">
+            <img src="imagens/2.png" alt="Banner Mini Afeto" class="banner">
+            <a href="#pedido" class="banner-link">Pronto para fazer seu pedido?<br>Clique aqui para comprar agora!</a>
         </div>
 
         <div id="produtos" class="produto">
@@ -169,6 +222,27 @@
                 <button type="submit">Finalizar Pedido e Pagar</button>
             </form>
         </div>
+
+        <!-- Carrossel de Reviews -->
+        <div class="reviews-section">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="review active">
+                <img src="imagens/review1.jpg" alt="Cliente 1">
+                <p>“Amei meus ímãs, chegaram rapidinho e com excelente qualidade!”<br><strong>— Mariana R.</strong></p>
+            </div>
+            <div class="review">
+                <img src="imagens/review2.jpg" alt="Cliente 2">
+                <p>“Perfeito para presentear! Meu namorado adorou a surpresa.”<br><strong>— Lucas A.</strong></p>
+            </div>
+            <div class="review">
+                <img src="imagens/review3.jpg" alt="Cliente 3">
+                <p>“Qualidade top e atendimento super atencioso. Recomendo!”<br><strong>— Ana Paula T.</strong></p>
+            </div>
+            <div class="review-nav">
+                <button id="prevReview">&#10094;</button>
+                <button id="nextReview">&#10095;</button>
+            </div>
+        </div>
     </section>
 
     <footer id="contato">
@@ -179,6 +253,7 @@
 
     <script src="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.js"></script>
     <script>
+        // CropperJS
         const inputImage = document.getElementById('inputImage');
         const image = document.getElementById('image');
         let cropper;
@@ -213,6 +288,32 @@
                 document.getElementById('cropped-result').appendChild(canvas);
             }
         });
+
+        // Carrossel de Reviews
+        const reviews = document.querySelectorAll('.review');
+        let currentReview = 0;
+
+        function showReview(index) {
+            reviews.forEach((rev, i) => {
+                rev.classList.toggle('active', i === index);
+            });
+        }
+
+        document.getElementById('prevReview').addEventListener('click', () => {
+            currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+            showReview(currentReview);
+        });
+
+        document.getElementById('nextReview').addEventListener('click', () => {
+            currentReview = (currentReview + 1) % reviews.length;
+            showReview(currentReview);
+        });
+
+        // Rotação automática
+        setInterval(() => {
+            currentReview = (currentReview + 1) % reviews.length;
+            showReview(currentReview);
+        }, 5000);
     </script>
 </body>
 </html>
