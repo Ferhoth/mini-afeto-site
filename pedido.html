@@ -3,161 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini Afeto Magnéticos</title>
+  <title>Pedido - Mini Afeto</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fdf6f0;
-      color: #333;
+    body { font-family: Arial, sans-serif; background: #fdf6f0; margin: 0; padding: 20px; }
+    h1 { color: #ff6f61; }
+    .hidden { display: none; }
+    .thumbs img {
+      width: 80px; height: 80px; object-fit: cover; border-radius: 5px; margin: 5px;
     }
-    header {
-      background: #ffb6b9;
-      text-align: center;
-      padding: 30px 20px;
-      position: relative;
-    }
-    header img.logo {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 80px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    nav {
-      text-align: center;
-      background: #ffe0e0;
-      padding: 10px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .produto {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,.1);
-      margin-bottom: 30px;
-      text-align: center;
-      position: relative;
-    }
-    .produto img.logo-sobreposta {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 80px;
-    }
-    .produto img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    ul {
-      padding-left: 20px;
-      text-align: left;
-      display: inline-block;
-    }
-    .reviews-section {
-      margin-top: 60px;
-    }
-    .review {
-      background: #fff;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,.1);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    .review img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    .review p {
-      margin: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #ffe0e0;
-      font-size: .9em;
-    }
+    .thumbs { display: flex; flex-wrap: wrap; gap: 10px; }
+    button { padding: 10px 20px; background: #ff6f61; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
+    select, input[type="file"] { margin-bottom: 15px; }
   </style>
 </head>
 <body>
-  <header>
-    <img src="imagens/Logotipo Elegante Iniciais com Flor Bege (1).png" alt="Logo" class="logo">
-    <h1>Mini Afeto Magnéticos</h1>
-    <p>Imprima suas memórias em ímãs personalizados ❤️</p>
-  </header>
-  <nav>
-    <a href="#produtos">Produtos</a>
-    <a href="#como-funciona">Como Funciona</a>
-    <a href="pedido.html">Pedido</a>
-    <a href="#contato">Contato</a>
-  </nav>
-  <section>
-    <div id="produtos" class="produto">
-      <img src="imagens/2.png" alt="Ímã com gato preto">
-      <h2>Conjunto com 9 Ímãs Personalizados (50x50 mm)</h2>
-      <ul>
-        <li>📸 Fazemos com qualquer foto</li>
-        <li>📏 Tamanho: 50x50 mm</li>
-        <li>⏳ Produção: 3 dias úteis + envio</li>
-      </ul>
-      <p style="margin-top:20px;"><a href="pedido.html" style="background:#ffb6b9;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;">Escolher Quantidade</a></p>
-    </div>
 
-    <div id="como-funciona">
-      <h2>Como Funciona</h2>
-      <ol>
-        <li>Escolha a quantidade de ímãs</li>
-        <li>Envie e recorte suas fotos</li>
-        <li>Nós produzimos com carinho</li>
-        <li>Receba em casa</li>
-      </ol>
-    </div>
+<h1>Faça seu pedido</h1>
 
-    <div class="reviews-section">
-      <h2>O que nossos clientes dizem</h2>
-      <div class="review">
-        <img src="imagens/review1.jpg" alt="Cliente 1">
-        <p>“Ficaram lindos! Presenteei minha mãe e ela se emocionou. Recomendo muito!”<br><strong>— Juliana S.</strong></p>
-      </div>
-      <div class="review">
-        <img src="imagens/review2.jpg" alt="Cliente 2">
-        <p>“Amei o resultado dos meus ímãs, ótima qualidade e entrega rápida.”<br><strong>— Marcos F.</strong></p>
-      </div>
-      <div class="review">
-        <img src="imagens/review3.jpg" alt="Cliente 3">
-        <p>“Perfeito para decorar a geladeira e relembrar bons momentos!”<br><strong>— Renata P.</strong></p>
-      </div>
-      <div class="review">
-        <img src="imagens/review4.jpg" alt="Cliente 4">
-        <p>“Produto lindo, com certeza vou comprar de novo.”<br><strong>— Rafael T.</strong></p>
-      </div>
-    </div>
-  </section>
-  <footer id="contato">
-    <p>📧 Email: ferhoth@hotmail.com</p>
-    <p>📱 Whatsapp: (11) 94634-1004</p>
-    <p>© 2025 Mini Afeto Magnéticos - Todos os direitos reservados.</p>
-  </footer>
+<label>Escolha a quantidade:</label>
+<select id="quantidade">
+  <option value="0">Selecione...</option>
+  <option value="1">1 ímã</option>
+  <option value="3">3 ímãs</option>
+  <option value="9">9 ímãs</option>
+</select>
+
+<div id="uploadArea" class="hidden">
+  <p>Envie suas imagens (máx. <span id="max"></span>)</p>
+  <input type="file" id="imagens" multiple accept="image/*">
+  <div class="thumbs" id="preview"></div>
+  <button onclick="finalizar()">Finalizar Pedido e Pagar</button>
+</div>
+
+<script>
+  const select = document.getElementById("quantidade");
+  const uploadArea = document.getElementById("uploadArea");
+  const imagensInput = document.getElementById("imagens");
+  const preview = document.getElementById("preview");
+  const maxSpan = document.getElementById("max");
+
+  let maxFotos = 0;
+  let arquivos = [];
+
+  select.addEventListener("change", () => {
+    maxFotos = parseInt(select.value);
+    if (maxFotos > 0) {
+      uploadArea.classList.remove("hidden");
+      maxSpan.textContent = maxFotos;
+    } else {
+      uploadArea.classList.add("hidden");
+    }
+  });
+
+  imagensInput.addEventListener("change", (e) => {
+    const files = Array.from(e.target.files);
+    preview.innerHTML = "";
+    arquivos = files.slice(0, maxFotos); // limita quantidade
+    arquivos.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const img = document.createElement("img");
+        img.src = event.target.result;
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  function finalizar() {
+    if (arquivos.length !== maxFotos) {
+      alert(`Por favor, envie exatamente ${maxFotos} imagem(ns).`);
+      return;
+    }
+    alert("Pedido finalizado! (Integração de pagamento virá aqui)");
+  }
+</script>
+
 </body>
 </html>
-
