@@ -5,18 +5,46 @@
    <title>Upload e Corte de Foto</title>
    <link  href="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.css" rel="stylesheet"/>
    <style>
-       body {
+       body, html {
+         margin: 0;
+         padding: 0;
+         width: 100%;
+         height: 100%;
          font-family: Arial, sans-serif;
+         overflow: hidden;
+       }
+       .background {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-image: url('PETS.JPG');
+         background-size: cover;
+         background-position: center;
+         z-index: -1;
+       }
+       .logo {
+         position: absolute;
+         top: 20px;
+         left: 20px;
+         width: 120px;
+       }
+       .content {
          text-align: center;
          padding: 20px;
+         position: relative;
+         z-index: 1;
+         color: white;
        }
        #preview {
          margin-top: 20px;
          width: 300px;
          height: 300px;
          overflow: hidden;
-         border: 1px solid #ccc;
-         margin: 0 auto;
+         border: 1px solid #fff;
+         margin: 20px auto;
+         background: rgba(255, 255, 255, 0.2);
        }
        img {
          max-width: 100%;
@@ -24,10 +52,14 @@
        #cropped-result {
          margin-top: 20px;
        }
-       #cropButton {
+       #cropButton, #inputImage {
          margin-top: 10px;
          padding: 10px 20px;
          cursor: pointer;
+         background: #fff;
+         border: none;
+         border-radius: 5px;
+         margin: 10px;
        }
        .carousel-container {
          margin-top: 40px;
@@ -44,36 +76,52 @@
          min-width: 33.33%;
          box-sizing: border-box;
          padding: 10px;
+         color: white;
+         text-align: center;
+         background: rgba(0, 0, 0, 0.5);
+         border-radius: 10px;
        }
        .carousel-controls {
          margin-top: 10px;
        }
+       .carousel-controls button {
+         padding: 10px 20px;
+         cursor: pointer;
+         background: #fff;
+         border: none;
+         border-radius: 5px;
+         margin: 5px;
+       }
    </style>
 </head>
 <body>
-<h2>Envie sua Foto e Corte para o Ímã</h2>
-<input type="file" id="inputImage" accept="image/*">
-<div id="preview">
-   <img id="image" alt="Pré-visualização">
-</div>
-<button id="cropButton">Cortar Imagem</button>
-<div id="cropped-result"></div>
-
-<div class="carousel-container">
-  <div class="carousel" id="carousel">
-    <div class="carousel-item">Depoimento 1</div>
-    <div class="carousel-item">Depoimento 2</div>
-    <div class="carousel-item">Depoimento 3</div>
-    <div class="carousel-item">Depoimento 4</div>
-    <div class="carousel-item">Depoimento 5</div>
-    <div class="carousel-item">Depoimento 6</div>
-    <div class="carousel-item">Depoimento 7</div>
-    <div class="carousel-item">Depoimento 8</div>
-    <div class="carousel-item">Depoimento 9</div>
+<div class="background"></div>
+<img src="Logotipo Elegante Iniciais com Flor Bege (1).png" class="logo" alt="Logo">
+<div class="content">
+  <h2>Envie sua Foto e Corte para o Ímã</h2>
+  <input type="file" id="inputImage" accept="image/*">
+  <div id="preview">
+     <img id="image" alt="Pré-visualização">
   </div>
-  <div class="carousel-controls">
-    <button id="prev">&#10094;</button>
-    <button id="next">&#10095;</button>
+  <button id="cropButton">Cortar Imagem</button>
+  <div id="cropped-result"></div>
+
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <div class="carousel-item">Depoimento 1</div>
+      <div class="carousel-item">Depoimento 2</div>
+      <div class="carousel-item">Depoimento 3</div>
+      <div class="carousel-item">Depoimento 4</div>
+      <div class="carousel-item">Depoimento 5</div>
+      <div class="carousel-item">Depoimento 6</div>
+      <div class="carousel-item">Depoimento 7</div>
+      <div class="carousel-item">Depoimento 8</div>
+      <div class="carousel-item">Depoimento 9</div>
+    </div>
+    <div class="carousel-controls">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
   </div>
 </div>
 
